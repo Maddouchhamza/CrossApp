@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Running — Nature & Lumière</title>
+    <meta
+      name="description"
+      content="Site vitrine running : galerie photo, esprit nature, cross et trail."
+    />
+
+    <style>
+      :root {
+        /* Palette claire / nature */
+        --bg: #fbfaf6; /* crème */
+        --card: #ffffff;
+        --text: #1f2a24; /* vert/gris foncé */
+        --muted: #5b6b61; /* texte secondaire */
+        --line: rgba(31, 42, 36, 0.12);
+        --accent: #2f7d4d; /* vert */
+        --accent2: #a3b18a; /* sauge */
+        --sand: #efe9da; /* sable */
+        --shadow: 0 18px 45px rgba(17, 24, 39, 0.1);
+        --r: 18px;
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        color: var(--text);
+        background:
+          radial-gradient(
+            900px 520px at 15% -10%,
+            rgba(47, 125, 77, 0.1),
+            transparent 55%
+          ),
+          radial-gradient(
+            780px 520px at 90% 10%,
+            rgba(163, 177, 138, 0.14),
+            transparent 55%
+          ),
+          linear-gradient(180deg, var(--bg), #ffffff 60%);
+      }
+
+      a {
+        color: inherit;
+      }
+      .container {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 18px;
+      }
+
+      /* NAV */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(251, 250, 246, 0.82);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-weight: 900;
+      }
+      .logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 12px 25px rgba(47, 125, 77, 0.18);
+      }
+      .links {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .links a {
+        text-decoration: none;
+        color: var(--muted);
+        padding: 8px 10px;
+        border-radius: 12px;
+      }
+      .links a:hover {
+        background: rgba(47, 125, 77, 0.08);
+        color: var(--text);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(31, 42, 36, 0.14);
+        background: rgba(255, 255, 255, 0.95);
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 850;
+        cursor: pointer;
+        box-shadow: 0 10px 22px rgba(17, 24, 39, 0.08);
+      }
+      .btn.primary {
+        border: none;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        color: #0f1a14;
+        box-shadow: 0 16px 30px rgba(47, 125, 77, 0.18);
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      /* HERO */
+      .hero {
+        padding: 54px 0 26px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+      .hero-card {
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        overflow: hidden;
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+      .hero-img {
+        min-height: 380px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(251, 250, 246, 0.1),
+            rgba(251, 250, 246, 0.92)
+          ),
+          url("assets/1.jpg") center/cover no-repeat;
+      }
+      .hero-content {
+        padding: 22px;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.05;
+      }
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(14px, 1.7vw, 16px);
+        line-height: 1.75;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .pill {
+        border: 1px solid rgba(31, 42, 36, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(239, 233, 218, 0.65),
+          rgba(255, 255, 255, 0.92)
+        );
+        padding: 8px 10px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-weight: 780;
+        font-size: 13px;
+      }
+
+      .side {
+        display: grid;
+        gap: 18px;
+        grid-template-rows: 1fr 1fr;
+      }
+      .side-card {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+      .kpi {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .kpi .box {
+        border: 1px solid rgba(31, 42, 36, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(239, 233, 218, 0.45),
+          rgba(255, 255, 255, 0.95)
+        );
+        border-radius: 14px;
+        padding: 12px;
+      }
+      .kpi .n {
+        font-size: 22px;
+        font-weight: 950;
+      }
+      .kpi .t {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      /* SECTIONS */
+      .section {
+        padding: 34px 0;
+      }
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+      .section p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.85;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 16px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: var(--r);
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        align-items: center;
+        margin-top: 16px;
+      }
+      .shot {
+        border-radius: var(--r);
+        border: 1px solid var(--line);
+        overflow: hidden;
+        min-height: 320px;
+        background: url("assets/2.jpg") center/cover no-repeat;
+        box-shadow: var(--shadow);
+      }
+
+      /* GALLERY */
+      .gallery {
+        margin-top: 16px;
+        columns: 3 260px;
+        column-gap: 14px;
+      }
+      .gitem {
+        break-inside: avoid;
+        margin: 0 0 14px;
+        border-radius: var(--r);
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        position: relative;
+      }
+      .gitem img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .gcap {
+        position: absolute;
+        inset: auto 10px 10px 10px;
+        padding: 10px 10px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(31, 42, 36, 0.14);
+        color: var(--muted);
+        font-size: 13px;
+        backdrop-filter: blur(6px);
+      }
+
+      /* LIGHTBOX */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(17, 24, 39, 0.62);
+        z-index: 100;
+        padding: 18px;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lb-inner {
+        max-width: min(1100px, 96vw);
+        max-height: 88vh;
+        width: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+      .lb-inner img {
+        width: 100%;
+        height: 88vh;
+        max-height: 88vh;
+        object-fit: contain;
+        display: block;
+        background: rgba(239, 233, 218, 0.45);
+      }
+      .lb-bar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .icon-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        border: 1px solid rgba(31, 42, 36, 0.16);
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--text);
+        cursor: pointer;
+        font-weight: 950;
+      }
+
+      .footer {
+        padding: 26px 0 42px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .side {
+          grid-template-rows: auto;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .split {
+          grid-template-columns: 1fr;
+        }
+        .hero-img {
+          min-height: 320px;
+        }
+        .links {
+          display: none;
+        }
+        .gallery {
+          columns: 2 220px;
+        }
+      }
+      @media (max-width: 520px) {
+        .gallery {
+          columns: 1 240px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .btn:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#top">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Cross & Running</span>
+        </a>
+        <nav class="links" aria-label="Navigation">
+          <a href="#apropos">À propos</a>
+          <a href="#themes">Esprit</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn primary" href="#galerie">Voir les photos</a>
+      </div>
+    </header>
+
+    <main id="top" class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div
+              class="hero-img"
+              role="img"
+              aria-label="Photo running nature"
+            ></div>
+            <div class="hero-content">
+              <h1>Running en nature, moments de course</h1>
+              <p class="lead">
+                Une vitrine simple et lumineuse pour présenter des photos de
+                cross et de course en plein air : effort, ambiance, équipe et
+                paysages.
+              </p>
+              <div class="hero-actions">
+                <a class="btn primary" href="#galerie">Découvrir la galerie</a>
+                <a class="btn" href="#apropos">Lire l’histoire</a>
+                <a class="btn" href="#contact">Me contacter</a>
+              </div>
+              <div class="pill-row">
+                <span class="pill">Cross</span>
+                <span class="pill">Forêt</span>
+                <span class="pill">Équipe</span>
+                <span class="pill">Compétition</span>
+                <span class="pill">Lumière</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="side">
+            <div class="side-card">
+              <h2 style="margin: 0 0 8px">L’ambiance</h2>
+              <p style="margin: 0; color: var(--muted); line-height: 1.85">
+                Des scènes naturelles : terrain gras, feuilles, lignes
+                d’arrivée, sourires après l’effort. Un style clair pour laisser
+                respirer les images.
+              </p>
+              <div class="kpi">
+                <div class="box">
+                  <div class="n">10</div>
+                  <div class="t">photos en galerie</div>
+                </div>
+                <div class="box">
+                  <div class="n">100%</div>
+                  <div class="t">outdoor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="apropos" class="section">
+        <h2>À propos</h2>
+        <p>
+          Ce site met en avant des instants de course en pleine nature : la
+          concentration avant l’effort, l’intensité du cross, et l’énergie du
+          collectif. Des images simples, lumineuses, et authentiques.
+        </p>
+
+        <div class="split">
+          <div class="card">
+            <h3>Ce que tu vas voir</h3>
+            <p>
+              Des plans en action (coureurs sur chemins et pelouse), des scènes
+              de compétition, et des moments d’équipe (avant / après).
+            </p>
+            <div style="height: 10px"></div>
+            <h3>L’objectif</h3>
+            <p>
+              Présenter une galerie claire, agréable sur mobile, avec une
+              identité “nature” : vert doux, sable, blanc cassé.
+            </p>
+          </div>
+          <div class="shot" aria-label="Photo secondaire"></div>
+        </div>
+      </section>
+
+      <section id="themes" class="section">
+        <h2>Esprit</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Cross & terrain</h3>
+            <p>
+              Feuilles, boue, pelouse : le vrai décor de l’hiver, brut et
+              vivant.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Effort & focus</h3>
+            <p>
+              Le moment où tout se joue : la foulée, le souffle, la lucidité.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Collectif</h3>
+            <p>
+              Une course, c’est aussi une équipe : encouragements, sourires,
+              souvenirs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="galerie" class="section">
+        <h2>Galerie</h2>
+        <div class="gallery" id="gallery"></div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:tonmail@example.com">tonmail@example.com</a></p>
+          </div>
+          <div class="card">
+            <h3>Instagram</h3>
+            <p><a href="#" rel="noopener">Ton lien Instagram</a></p>
+          </div>
+          <div class="card">
+            <h3>Zone</h3>
+            <p>Ta ville / ton club</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        © <span id="year"></span> — Cross & Running. Tous droits réservés.
+      </footer>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lb-inner" role="dialog" aria-modal="true">
+        <div class="lb-bar">
+          <button class="icon-btn" id="lbClose" aria-label="Fermer">✕</button>
+        </div>
+        <img id="lbImg" src="" alt="Image agrandie" />
+      </div>
+    </div>
+
+    <script>
+      // Année
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Légendes (tu peux modifier ces textes)
+      const captions = [
+        "Course en nature — instant d’effort",
+        "Cross au soleil — relance",
+        "Passage près de l’aire d’arrivée",
+        "Ambiance de course — pelouse et lumière",
+        "Sous-bois & feuilles — foulée régulière",
+        "Départ groupé — énergie du peloton",
+        "Fin de journée — longues ombres",
+        "Photo d’équipe — après la course",
+        "Sourires & dossards — souvenir",
+        "Chemin forestier — course et calme",
+      ];
+
+      // Générer la galerie automatiquement (assets/1.jpg -> 10.jpg)
+      const gallery = document.getElementById("gallery");
+      for (let i = 1; i <= 10; i++) {
+        const fig = document.createElement("figure");
+        fig.className = "gitem";
+        fig.setAttribute("data-full", `assets/${i}.jpg`);
+
+        const img = document.createElement("img");
+        img.src = `assets/${i}.jpg`;
+        img.alt = `Photo running ${i}`;
+
+        const cap = document.createElement("figcaption");
+        cap.className = "gcap";
+        cap.textContent = captions[i - 1] || "Running — photo";
+
+        fig.appendChild(img);
+        fig.appendChild(cap);
+        gallery.appendChild(fig);
+      }
+
+      // Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lbImg");
+      const lbClose = document.getElementById("lbClose");
+
+      function openLb(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || "Image agrandie";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLb() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lbImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      gallery.addEventListener("click", (e) => {
+        const item = e.target.closest(".gitem");
+        if (!item) return;
+        const full = item.getAttribute("data-full");
+        const img = item.querySelector("img");
+        openLb(full, img?.alt);
+      });
+
+      lbClose.addEventListener("click", closeLb);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLb();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("open"))
+          closeLb();
+      });
+    </script>
+  </body>
+</html>
