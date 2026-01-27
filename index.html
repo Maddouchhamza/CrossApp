@@ -3,24 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Running — Nature & Lumière</title>
+    <title>ATHLE-RUNNING & TRAIL</title>
     <meta
       name="description"
-      content="Site vitrine running : galerie photo, esprit nature, cross et trail."
+      content="ATHLE-RUNNING & TRAIL — Club, entraînements, cross, running, trail, galerie photo."
     />
 
     <style>
       :root {
-        /* Palette claire / nature */
-        --bg: #fbfaf6; /* crème */
+        /* Palette mauve / blanc / noir */
+        --bg: #ffffff;
         --card: #ffffff;
-        --text: #1f2a24; /* vert/gris foncé */
-        --muted: #5b6b61; /* texte secondaire */
-        --line: rgba(31, 42, 36, 0.12);
-        --accent: #2f7d4d; /* vert */
-        --accent2: #a3b18a; /* sauge */
-        --sand: #efe9da; /* sable */
-        --shadow: 0 18px 45px rgba(17, 24, 39, 0.1);
+        --text: #0b0b0b;
+        --muted: rgba(11, 11, 11, 0.68);
+        --line: rgba(11, 11, 11, 0.12);
+
+        --purple: #6d2aa8;
+        --purple2: #8f4dff;
+
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
         --r: 18px;
         --max: 1120px;
       }
@@ -31,32 +32,24 @@
       html {
         scroll-behavior: smooth;
       }
+
       body {
         margin: 0;
         font-family:
           ui-sans-serif,
           system-ui,
           -apple-system,
-          Segoe UI,
+          "Segoe UI",
           Roboto,
           Arial;
+        font-weight: 400; /* <-- plus léger */
         color: var(--text);
-        background:
-          radial-gradient(
-            900px 520px at 15% -10%,
-            rgba(47, 125, 77, 0.1),
-            transparent 55%
-          ),
-          radial-gradient(
-            780px 520px at 90% 10%,
-            rgba(163, 177, 138, 0.14),
-            transparent 55%
-          ),
-          linear-gradient(180deg, var(--bg), #ffffff 60%);
+        background: linear-gradient(180deg, #fff, #fafafa 70%);
       }
 
       a {
         color: inherit;
+        text-decoration: none;
       }
       .container {
         max-width: var(--max);
@@ -64,15 +57,12 @@
         padding: 0 18px;
       }
 
-      /* NAV */
-      .this {
-        margin-right: 20px;
-      }
+      /* NAVBAR (comme avant) */
       .nav {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(251, 250, 246, 0.82);
+        background: rgba(255, 255, 255, 0.86);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--line);
       }
@@ -87,29 +77,31 @@
         align-items: center;
         gap: 10px;
         text-decoration: none;
-        font-weight: 900;
       }
-      .logo {
+      .brand-name {
+        font-weight: 600; /* <-- plus light */
+        letter-spacing: 0.2px;
+      }
+      .logo-img {
         width: 34px;
         height: 34px;
-        margin-left: 20px;
         border-radius: 10px;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        box-shadow: 0 12px 25px rgba(47, 125, 77, 0.18);
+        display: block;
       }
+
       .links {
         display: flex;
         gap: 14px;
         align-items: center;
       }
       .links a {
-        text-decoration: none;
         color: var(--muted);
         padding: 8px 10px;
         border-radius: 12px;
+        font-weight: 500; /* <-- plus light */
       }
       .links a:hover {
-        background: rgba(47, 125, 77, 0.08);
+        background: rgba(109, 42, 168, 0.08);
         color: var(--text);
       }
 
@@ -119,19 +111,18 @@
         justify-content: center;
         padding: 10px 14px;
         border-radius: 12px;
-        border: 1px solid rgba(31, 42, 36, 0.14);
-        background: rgba(255, 255, 255, 0.95);
-        text-decoration: none;
+        border: 1px solid rgba(11, 11, 11, 0.14);
+        background: #fff;
         color: var(--text);
-        font-weight: 850;
+        font-weight: 600; /* <-- plus light */
         cursor: pointer;
-        box-shadow: 0 10px 22px rgba(17, 24, 39, 0.08);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
       }
       .btn.primary {
         border: none;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        color: #0f1a14;
-        box-shadow: 0 16px 30px rgba(47, 125, 77, 0.18);
+        background: linear-gradient(135deg, var(--purple), var(--purple2));
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(109, 42, 168, 0.18);
       }
       .btn:hover {
         transform: translateY(-1px);
@@ -139,165 +130,176 @@
 
       /* HERO */
       .hero {
-        padding: 54px 0 26px;
+        padding: 22px 0 18px;
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 0.92fr 1.08fr;
         gap: 18px;
         align-items: stretch;
       }
-      .hero-card {
+
+      .info-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        padding: 18px;
+        overflow: hidden;
+      }
+
+      .info-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(109, 42, 168, 0.22);
+        background: rgba(109, 42, 168, 0.06);
+        color: rgba(11, 11, 11, 0.75);
+        font-weight: 600; /* plus light */
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+
+      .info-title {
+        margin: 0 0 10px;
+        font-size: clamp(22px, 2.6vw, 32px);
+        line-height: 1.15;
+        font-weight: 650; /* <-- moins intense */
+      }
+      .info-text {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 400;
+      }
+
+      .box {
+        margin-top: 14px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 14px;
+      }
+      .box h3 {
+        margin: 0 0 10px;
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        color: rgba(11, 11, 11, 0.75);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .schedule {
+        display: grid;
+        gap: 10px;
+      }
+      .schedule .row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(109, 42, 168, 0.05);
+        border: 1px solid rgba(109, 42, 168, 0.16);
+      }
+      .schedule .day {
+        font-weight: 600;
+      }
+      .schedule .time {
+        color: rgba(11, 11, 11, 0.68);
+        font-weight: 500;
+      }
+
+      .cta {
+        margin-top: 14px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* SLIDER (droite) */
+      .slider {
         border: 1px solid var(--line);
         border-radius: var(--r);
         overflow: hidden;
-        background: var(--card);
         box-shadow: var(--shadow);
+        background: #111;
+        position: relative;
+        min-height: 420px;
       }
-      .hero-img {
-        min-height: 380px;
-        background:
-          linear-gradient(
-            180deg,
-            rgba(251, 250, 246, 0.1),
-            rgba(251, 250, 246, 0.92)
-          ),
-          url("assets/1.jpg") center/cover no-repeat;
-      }
-      .hero-content {
-        padding: 22px;
-      }
-      h1 {
-        margin: 0 0 10px;
-        font-size: clamp(28px, 4vw, 44px);
-        line-height: 1.05;
-      }
-      .lead {
-        margin: 0;
-        color: var(--muted);
-        font-size: clamp(14px, 1.7vw, 16px);
-        line-height: 1.75;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 16px;
-      }
-      .pill-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 18px;
-      }
-      .pill {
-        border: 1px solid rgba(31, 42, 36, 0.12);
+      .slider::after {
+        content: "";
+        position: absolute;
+        inset: 0;
         background: linear-gradient(
           180deg,
-          rgba(239, 233, 218, 0.65),
-          rgba(255, 255, 255, 0.92)
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.55)
         );
-        padding: 8px 10px;
-        border-radius: 999px;
-        color: var(--muted);
-        font-weight: 780;
-        font-size: 13px;
+        pointer-events: none;
+      }
+      .slider img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 800ms ease;
+      }
+      .slider img.active {
+        opacity: 1;
       }
 
-      .side {
-        display: grid;
-        gap: 18px;
-        grid-template-rows: 1fr 1fr;
-      }
-      .side-card {
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: var(--r);
-        background: var(--card);
-        box-shadow: var(--shadow);
-      }
-      .kpi {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      .slider-caption {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        right: 16px;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
         gap: 12px;
-        margin-top: 12px;
+        color: #fff;
       }
-      .kpi .box {
-        border: 1px solid rgba(31, 42, 36, 0.12);
-        background: linear-gradient(
-          180deg,
-          rgba(239, 233, 218, 0.45),
-          rgba(255, 255, 255, 0.95)
-        );
-        border-radius: 14px;
-        padding: 12px;
+      .slider-caption .cap-left {
+        font-weight: 600; /* plus light */
+        font-size: 16px;
+        letter-spacing: 0.1px;
       }
-      .kpi .n {
-        font-size: 22px;
-        font-weight: 950;
-      }
-      .kpi .t {
-        color: var(--muted);
+      .slider-caption .cap-right {
+        font-weight: 500;
         font-size: 13px;
-        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.12);
+        padding: 8px 10px;
+        border-radius: 999px;
+        backdrop-filter: blur(6px);
       }
 
       /* SECTIONS */
       .section {
-        padding: 34px 0;
+        padding: 28px 0;
       }
       .section h2 {
         margin: 0 0 10px;
         font-size: 22px;
+        font-weight: 650; /* moins intense */
       }
       .section p {
         margin: 0;
         color: var(--muted);
         line-height: 1.85;
       }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        margin-top: 16px;
-      }
-      .card {
-        border: 1px solid var(--line);
-        background: var(--card);
-        border-radius: var(--r);
-        padding: 16px;
-        box-shadow: var(--shadow);
-      }
-      .card h3 {
-        margin: 0 0 6px;
-        font-size: 16px;
-      }
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.75;
-      }
 
-      .split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-        align-items: center;
-        margin-top: 16px;
-      }
-      .shot {
-        border-radius: var(--r);
-        border: 1px solid var(--line);
-        overflow: hidden;
-        min-height: 320px;
-        background: url("assets/2.jpg") center/cover no-repeat;
-        box-shadow: var(--shadow);
-      }
-
-      /* GALLERY */
+      /* Galerie */
       .gallery {
-        margin-top: 16px;
+        margin-top: 14px;
         columns: 3 260px;
         column-gap: 14px;
       }
@@ -322,11 +324,80 @@
         inset: auto 10px 10px 10px;
         padding: 10px 10px;
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(31, 42, 36, 0.14);
-        color: var(--muted);
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.7);
         font-size: 13px;
         backdrop-filter: blur(6px);
+      }
+
+      /* Contact bas */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: var(--r);
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 650;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      /* Carte adresse simple (fond blanc + accent mauve) */
+      .address-card {
+        margin-top: 16px;
+        border: 1px solid rgba(11, 11, 11, 0.12);
+        border-left: 6px solid var(--purple);
+        border-radius: var(--r);
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: 14px 16px;
+      }
+
+      .address-label {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 6px;
+      }
+
+      .address-text {
+        font-size: 15px;
+        font-weight: 400;
+        color: rgba(11, 11, 11, 0.85);
+        line-height: 1.6;
+      }
+
+      .address-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(11, 11, 11, 0.75);
+        padding: 8px 10px;
+        border-radius: 12px;
+        border: 1px solid rgba(109, 42, 168, 0.22);
+        background: rgba(109, 42, 168, 0.06);
+      }
+      .address-link:hover {
+        background: rgba(109, 42, 168, 0.1);
+        color: rgba(11, 11, 11, 0.85);
       }
 
       /* LIGHTBOX */
@@ -336,7 +407,7 @@
         display: none;
         align-items: center;
         justify-content: center;
-        background: rgba(17, 24, 39, 0.62);
+        background: rgba(0, 0, 0, 0.68);
         z-index: 100;
         padding: 18px;
       }
@@ -349,7 +420,7 @@
         width: 100%;
         border-radius: 18px;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.35);
         background: rgba(255, 255, 255, 0.9);
         box-shadow: var(--shadow);
         position: relative;
@@ -360,7 +431,7 @@
         max-height: 88vh;
         object-fit: contain;
         display: block;
-        background: rgba(239, 233, 218, 0.45);
+        background: #f3f3f3;
       }
       .lb-bar {
         position: absolute;
@@ -373,40 +444,35 @@
         width: 40px;
         height: 40px;
         border-radius: 12px;
-        border: 1px solid rgba(31, 42, 36, 0.16);
+        border: 1px solid rgba(0, 0, 0, 0.16);
         background: rgba(255, 255, 255, 0.95);
-        color: var(--text);
+        color: #111;
         cursor: pointer;
-        font-weight: 950;
+        font-weight: 650;
       }
 
       .footer {
         padding: 26px 0 42px;
         border-top: 1px solid var(--line);
         color: var(--muted);
+        margin-top: 26px;
       }
 
       @media (max-width: 900px) {
         .hero-grid {
           grid-template-columns: 1fr;
         }
-        .side {
-          grid-template-rows: auto;
-        }
-        .grid {
-          grid-template-columns: 1fr;
-        }
-        .split {
-          grid-template-columns: 1fr;
-        }
-        .hero-img {
-          min-height: 320px;
-        }
-        .links {
-          display: none;
+        .slider {
+          min-height: 340px;
         }
         .gallery {
           columns: 2 220px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .links {
+          display: none;
         }
       }
       @media (max-width: 520px) {
@@ -421,163 +487,158 @@
         .btn:hover {
           transform: none;
         }
+        .slider img {
+          transition: none;
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- NAVBAR -->
     <header class="nav">
       <div class="container nav-inner">
-        <a class="brand" href="#top">
-          <span class="logo" aria-hidden="true"></span>
-          <span>Cross & Running</span>
+        <a class="brand" href="#top" aria-label="Accueil">
+          <img
+            class="logo-img"
+            src="assets/Logo.svg"
+            alt="Logo ATHLE-RUNNING & TRAIL"
+          />
+          <span class="brand-name">ATHLE-RUNNING & TRAIL</span>
         </a>
+
         <nav class="links" aria-label="Navigation">
-          <a href="#apropos">À propos</a>
-          <a href="#themes">Esprit</a>
-          <a href="#galerie">Galerie</a>
+          <a href="#club">Le club</a>
+          <a href="#photos">Photos</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a class="btn primary this" href="#galerie">Voir les photos</a>
+
+        <a class="btn primary" href="#photos">Voir les photos</a>
       </div>
     </header>
 
-    <main id="top" class="container">
+    <main class="container" id="top">
+      <!-- HERO = gauche infos + droite slider -->
       <section class="hero">
         <div class="hero-grid">
-          <div class="hero-card">
-            <div
-              class="hero-img"
-              role="img"
-              aria-label="Photo running nature"
-            ></div>
-            <div class="hero-content">
-              <h1>Running en nature, moments de course</h1>
-              <p class="lead">
-                Une vitrine simple et lumineuse pour présenter des photos de
-                cross et de course en plein air : effort, ambiance, équipe et
-                paysages.
+          <!-- Left info -->
+          <div class="info-panel">
+            <div class="info-badge">Cross • Running • Trail</div>
+            <h1 class="info-title">Rejoins le club</h1>
+            <p class="info-text">
+              Entraînements encadrés, esprit collectif, et sorties en pleine
+              nature. Contacte-nous pour une séance d’essai.
+            </p>
+
+            <div class="box">
+              <h3>Les entraînements</h3>
+              <div class="schedule">
+                <div class="row">
+                  <div class="day">Lundi / Mercredi / Vendredi</div>
+                  <div class="time">19h00 → 21h00</div>
+                </div>
+                <div class="row">
+                  <div class="day">Dimanche</div>
+                  <div class="time">10h30 → 12h30</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box">
+              <h3>Contact rapide</h3>
+              <p class="info-text" style="margin: 0">
+                📧 <b>tonmail@example.com</b><br />
+                📱 <b>+33 6 00 00 00 00</b><br />
+                📷 <b>@ton_instagram</b>
               </p>
-              <div class="hero-actions">
-                <a class="btn primary" href="#galerie">Découvrir la galerie</a>
-                <a class="btn" href="#apropos">Lire l’histoire</a>
-                <a class="btn" href="#contact">Me contacter</a>
-              </div>
-              <div class="pill-row">
-                <span class="pill">Cross</span>
-                <span class="pill">Forêt</span>
-                <span class="pill">Équipe</span>
-                <span class="pill">Compétition</span>
-                <span class="pill">Lumière</span>
-              </div>
+            </div>
+
+            <div class="cta">
+              <a class="btn primary" href="#contact">Contact détaillé</a>
+              <a class="btn" href="#photos">Galerie</a>
             </div>
           </div>
 
-          <div class="side">
-            <div class="side-card">
-              <h2 style="margin: 0 0 8px">L’ambiance</h2>
-              <p style="margin: 0; color: var(--muted); line-height: 1.85">
-                Des scènes naturelles : terrain gras, feuilles, lignes
-                d’arrivée, sourires après l’effort. Un style clair pour laisser
-                respirer les images.
-              </p>
-              <div class="kpi">
-                <div class="box">
-                  <div class="n">10</div>
-                  <div class="t">photos en galerie</div>
-                </div>
-                <div class="box">
-                  <div class="n">100%</div>
-                  <div class="t">outdoor</div>
-                </div>
-              </div>
+          <!-- Right slider -->
+          <div class="slider" aria-label="Galerie défilante">
+            <img
+              id="slideA"
+              class="active"
+              src="assets/1.jpg"
+              alt="Photo club 1"
+            />
+            <img id="slideB" src="assets/2.jpg" alt="Photo club 2" />
+            <div class="slider-caption">
+              <div class="cap-left">Galerie du club</div>
+              <div class="cap-right">Défilement automatique</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="apropos" class="section">
-        <h2>À propos</h2>
+      <!-- Descriptif club -->
+      <section id="club" class="section">
+        <h2>Le club</h2>
         <p>
-          Ce site met en avant des instants de course en pleine nature : la
-          concentration avant l’effort, l’intensité du cross, et l’énergie du
-          collectif. Des images simples, lumineuses, et authentiques.
+          ATHLE-RUNNING & TRAIL rassemble des passionnés de course à pied :
+          cross, running et trail. Notre objectif : progresser ensemble, dans
+          une bonne ambiance, avec des entraînements réguliers et des sorties en
+          nature.
         </p>
-
-        <div class="split">
-          <div class="card">
-            <h3>Ce que tu vas voir</h3>
-            <p>
-              Des plans en action (coureurs sur chemins et pelouse), des scènes
-              de compétition, et des moments d’équipe (avant / après).
-            </p>
-            <div style="height: 10px"></div>
-            <h3>L’objectif</h3>
-            <p>
-              Présenter une galerie claire, agréable sur mobile, avec une
-              identité “nature” : vert doux, sable, blanc cassé.
-            </p>
-          </div>
-          <div class="shot" aria-label="Photo secondaire"></div>
-        </div>
       </section>
 
-      <section id="themes" class="section">
-        <h2>Esprit</h2>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Cross & terrain</h3>
-            <p>
-              Feuilles, boue, pelouse : le vrai décor de l’hiver, brut et
-              vivant.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Effort & focus</h3>
-            <p>
-              Le moment où tout se joue : la foulée, le souffle, la lucidité.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Collectif</h3>
-            <p>
-              Une course, c’est aussi une équipe : encouragements, sourires,
-              souvenirs.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="galerie" class="section">
-        <h2>Galerie</h2>
+      <!-- Galerie -->
+      <section id="photos" class="section">
+        <h2>Photos</h2>
+        <p>Clique sur une photo pour l’ouvrir en grand.</p>
         <div class="gallery" id="gallery"></div>
       </section>
 
+      <!-- Contact détaillé -->
       <section id="contact" class="section">
         <h2>Contact</h2>
+        <p>Contacte-nous pour une séance d’essai ou des informations.</p>
 
-        <div class="grid">
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Téléphone</h3>
+            <p><a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
+          </div>
+
           <div class="card">
             <h3>Email</h3>
             <p><a href="mailto:tonmail@example.com">tonmail@example.com</a></p>
           </div>
+
           <div class="card">
             <h3>Instagram</h3>
-            <p><a href="#" rel="noopener">Ton lien Instagram</a></p>
-          </div>
-          <div class="card">
-            <h3>Zone</h3>
-            <p>Ta ville / ton club</p>
+            <p><a href="#" rel="noopener">@ton_instagram</a></p>
           </div>
         </div>
-      </section>
 
-      <footer class="footer">
-        © <span id="year"></span> — Cross & Running. Tous droits réservés.
-      </footer>
+        <div class="address-card">
+          <div class="address-label">Adresse</div>
+          <div class="address-text">
+            Stade Charléty — 17 Avenue Pierre de Coubertin, 75013 Paris
+          </div>
+          <a
+            class="address-link"
+            target="_blank"
+            rel="noopener"
+            href="https://www.google.com/maps/search/?api=1&query=Stade+Charl%C3%A9ty+17+Avenue+Pierre+de+Coubertin+75013+Paris"
+          >
+            Voir sur Google Maps
+          </a>
+        </div>
+
+        <footer class="footer">
+          © <span id="year"></span> — ATHLE-RUNNING & TRAIL. Tous droits
+          réservés.
+        </footer>
+      </section>
     </main>
 
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
       <div class="lb-inner" role="dialog" aria-modal="true">
         <div class="lb-bar">
@@ -591,21 +652,21 @@
       // Année
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Légendes (tu peux modifier ces textes)
+      // Légendes (optionnel)
       const captions = [
-        "Course en nature — instant d’effort",
-        "Cross au soleil — relance",
-        "Passage près de l’aire d’arrivée",
-        "Ambiance de course — pelouse et lumière",
-        "Sous-bois & feuilles — foulée régulière",
-        "Départ groupé — énergie du peloton",
-        "Fin de journée — longues ombres",
-        "Photo d’équipe — après la course",
-        "Sourires & dossards — souvenir",
-        "Chemin forestier — course et calme",
+        "Cross — instant d’effort",
+        "Relance au soleil",
+        "Passage proche de l’arrivée",
+        "Ambiance de course",
+        "Sous-bois & feuilles",
+        "Peloton — énergie",
+        "Longues ombres",
+        "Photo d’équipe",
+        "Sourires & dossards",
+        "Chemin forestier",
       ];
 
-      // Générer la galerie automatiquement (assets/1.jpg -> 10.jpg)
+      // Galerie (assets/1.jpg -> 10.jpg)
       const gallery = document.getElementById("gallery");
       for (let i = 1; i <= 10; i++) {
         const fig = document.createElement("figure");
@@ -614,11 +675,11 @@
 
         const img = document.createElement("img");
         img.src = `assets/${i}.jpg`;
-        img.alt = `Photo running ${i}`;
+        img.alt = `Photo ATHLE-RUNNING & TRAIL ${i}`;
 
         const cap = document.createElement("figcaption");
         cap.className = "gcap";
-        cap.textContent = captions[i - 1] || "Running — photo";
+        cap.textContent = captions[i - 1] || "ATHLE-RUNNING & TRAIL";
 
         fig.appendChild(img);
         fig.appendChild(cap);
@@ -660,6 +721,33 @@
         if (e.key === "Escape" && lightbox.classList.contains("open"))
           closeLb();
       });
+
+      // Slider : défilement auto
+      const slideA = document.getElementById("slideA");
+      const slideB = document.getElementById("slideB");
+      const sliderImages = Array.from(
+        { length: 10 },
+        (_, idx) => `assets/${idx + 1}.jpg`,
+      );
+
+      let current = 0;
+      let showingA = true;
+
+      setInterval(() => {
+        current = (current + 1) % sliderImages.length;
+        const nextSrc = sliderImages[current];
+
+        if (showingA) {
+          slideB.src = nextSrc;
+          slideB.classList.add("active");
+          slideA.classList.remove("active");
+        } else {
+          slideA.src = nextSrc;
+          slideA.classList.add("active");
+          slideB.classList.remove("active");
+        }
+        showingA = !showingA;
+      }, 3200);
     </script>
   </body>
 </html>
