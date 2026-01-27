@@ -71,11 +71,13 @@
         align-items: center;
         justify-content: space-between;
         padding: 14px 0;
+        padding-right: 20px;
       }
       .brand {
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-left: 20px;
         text-decoration: none;
       }
       .brand-name {
@@ -108,8 +110,9 @@
       .btn {
         display: inline-flex;
         align-items: center;
+        text-align: center;
         justify-content: center;
-        padding: 10px 14px;
+        padding: 10px 15px;
         border-radius: 12px;
         border: 1px solid rgba(11, 11, 11, 0.14);
         background: #fff;
@@ -479,6 +482,9 @@
         .gallery {
           columns: 1 240px;
         }
+        .photooo {
+          display: none;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         html {
@@ -513,7 +519,7 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <a class="btn primary" href="#photos">Voir les photos</a>
+        <a class="btn primary photooo" href="#photos">Voir les photos</a>
       </div>
     </header>
 
