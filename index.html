@@ -3,15 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ATHLE-RUNNING & TRAIL</title>
+    <title>PUC ATHLE-RUNNING & TRAIL</title>
     <meta
       name="description"
-      content="ATHLE-RUNNING & TRAIL — Club, entraînements, cross, running, trail, galerie photo."
+      content="Bienvenue au PUC ATHLE-RUNNING & TRAIL : entraînements, coaches, inscription, galerie photo."
     />
 
     <style>
       :root {
-        /* Palette mauve / blanc / noir */
         --bg: #ffffff;
         --card: #ffffff;
         --text: #0b0b0b;
@@ -32,7 +31,6 @@
       html {
         scroll-behavior: smooth;
       }
-
       body {
         margin: 0;
         font-family:
@@ -42,7 +40,7 @@
           "Segoe UI",
           Roboto,
           Arial;
-        font-weight: 400; /* <-- plus léger */
+        font-weight: 400;
         color: var(--text);
         background: linear-gradient(180deg, #fff, #fafafa 70%);
       }
@@ -57,7 +55,7 @@
         padding: 0 18px;
       }
 
-      /* NAVBAR (comme avant) */
+      /* NAVBAR */
       .nav {
         position: sticky;
         top: 0;
@@ -71,18 +69,17 @@
         align-items: center;
         justify-content: space-between;
         padding: 14px 0;
-        padding-right: 20px;
+        gap: 12px;
       }
       .brand {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-left: 20px;
-        text-decoration: none;
       }
       .brand-name {
-        font-weight: 600; /* <-- plus light */
+        font-weight: 600;
         letter-spacing: 0.2px;
+        line-height: 1.1;
       }
       .logo-img {
         width: 34px;
@@ -95,12 +92,14 @@
         display: flex;
         gap: 14px;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       .links a {
         color: var(--muted);
         padding: 8px 10px;
         border-radius: 12px;
-        font-weight: 500; /* <-- plus light */
+        font-weight: 500;
       }
       .links a:hover {
         background: rgba(109, 42, 168, 0.08);
@@ -110,16 +109,16 @@
       .btn {
         display: inline-flex;
         align-items: center;
-        text-align: center;
         justify-content: center;
-        padding: 10px 15px;
+        padding: 10px 14px;
         border-radius: 12px;
         border: 1px solid rgba(11, 11, 11, 0.14);
         background: #fff;
         color: var(--text);
-        font-weight: 600; /* <-- plus light */
+        font-weight: 600;
         cursor: pointer;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
+        white-space: nowrap;
       }
       .btn.primary {
         border: none;
@@ -137,7 +136,7 @@
       }
       .hero-grid {
         display: grid;
-        grid-template-columns: 0.92fr 1.08fr;
+        grid-template-columns: 0.95fr 1.05fr;
         gap: 18px;
         align-items: stretch;
       }
@@ -160,7 +159,7 @@
         border: 1px solid rgba(109, 42, 168, 0.22);
         background: rgba(109, 42, 168, 0.06);
         color: rgba(11, 11, 11, 0.75);
-        font-weight: 600; /* plus light */
+        font-weight: 600;
         font-size: 13px;
         margin-bottom: 12px;
       }
@@ -169,12 +168,12 @@
         margin: 0 0 10px;
         font-size: clamp(22px, 2.6vw, 32px);
         line-height: 1.15;
-        font-weight: 650; /* <-- moins intense */
+        font-weight: 650;
       }
       .info-text {
         margin: 0;
         color: var(--muted);
-        line-height: 1.8;
+        line-height: 1.85;
         font-weight: 400;
       }
 
@@ -223,7 +222,7 @@
         flex-wrap: wrap;
       }
 
-      /* SLIDER (droite) */
+      /* SLIDER */
       .slider {
         border: 1px solid var(--line);
         border-radius: var(--r);
@@ -256,7 +255,6 @@
       .slider img.active {
         opacity: 1;
       }
-
       .slider-caption {
         position: absolute;
         left: 16px;
@@ -270,7 +268,7 @@
         color: #fff;
       }
       .slider-caption .cap-left {
-        font-weight: 600; /* plus light */
+        font-weight: 600;
         font-size: 16px;
         letter-spacing: 0.1px;
       }
@@ -292,12 +290,38 @@
       .section h2 {
         margin: 0 0 10px;
         font-size: 22px;
-        font-weight: 650; /* moins intense */
+        font-weight: 650;
       }
       .section p {
         margin: 0;
         color: var(--muted);
-        line-height: 1.85;
+        line-height: 1.9;
+      }
+
+      /* Content blocks */
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: var(--r);
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 650;
+      }
+      .list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.9;
       }
 
       /* Galerie */
@@ -334,42 +358,24 @@
         backdrop-filter: blur(6px);
       }
 
-      /* Contact bas */
+      /* Contact grid */
       .contact-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
         margin-top: 14px;
       }
-      .card {
-        border: 1px solid var(--line);
-        background: var(--card);
-        border-radius: var(--r);
-        padding: 16px;
-        box-shadow: var(--shadow);
-      }
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 16px;
-        font-weight: 650;
-      }
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
 
-      /* Carte adresse simple (fond blanc + accent mauve) */
+      /* Adresse simple */
       .address-card {
         margin-top: 16px;
         border: 1px solid rgba(11, 11, 11, 0.12);
         border-left: 6px solid var(--purple);
         border-radius: var(--r);
-        background: #c6a4ff0e;
+        background: #fff;
         box-shadow: var(--shadow);
         padding: 14px 16px;
       }
-
       .address-label {
         display: inline-block;
         font-size: 12px;
@@ -379,14 +385,12 @@
         color: var(--purple);
         margin-bottom: 6px;
       }
-
       .address-text {
         font-size: 15px;
         font-weight: 400;
         color: rgba(11, 11, 11, 0.85);
         line-height: 1.6;
       }
-
       .address-link {
         display: inline-block;
         margin-top: 10px;
@@ -401,6 +405,13 @@
       .address-link:hover {
         background: rgba(109, 42, 168, 0.1);
         color: rgba(11, 11, 11, 0.85);
+      }
+
+      .footer {
+        padding: 26px 0 42px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        margin-top: 26px;
       }
 
       /* LIGHTBOX */
@@ -454,13 +465,6 @@
         font-weight: 650;
       }
 
-      .footer {
-        padding: 26px 0 42px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        margin-top: 26px;
-      }
-
       @media (max-width: 900px) {
         .hero-grid {
           grid-template-columns: 1fr;
@@ -474,6 +478,9 @@
         .contact-grid {
           grid-template-columns: 1fr;
         }
+        .split {
+          grid-template-columns: 1fr;
+        }
         .links {
           display: none;
         }
@@ -481,9 +488,6 @@
       @media (max-width: 520px) {
         .gallery {
           columns: 1 240px;
-        }
-        .photooo {
-          display: none;
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -505,39 +509,47 @@
     <header class="nav">
       <div class="container nav-inner">
         <a class="brand" href="#top" aria-label="Accueil">
-          <img
-            class="logo-img"
-            src="assets/Logo.svg"
-            alt="Logo ATHLE-RUNNING & TRAIL"
-          />
-          <span class="brand-name">ATHLE-RUNNING & TRAIL</span>
+          <img class="logo-img" src="assets/Logo.svg" alt="Logo PUC" />
+          <span class="brand-name">PUC ATHLE-RUNNING & TRAIL</span>
         </a>
 
         <nav class="links" aria-label="Navigation">
           <a href="#club">Le club</a>
+          <a href="#coaches">Entraîneurs</a>
+          <a href="#entrainements">Entraînements</a>
           <a href="#photos">Photos</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <a class="btn primary photooo" href="#photos">Voir les photos</a>
+        <a
+          class="btn primary"
+          target="_blank"
+          rel="noopener"
+          href="https://puc.monclub.app/app/60d430fadcadb40027751a2e?selectedMembership=6953d6e1474df87171d65aa9&step=1&selectedSlots=&waitingSlots=&childSubscription=false"
+        >
+          S’inscrire
+        </a>
       </div>
     </header>
 
     <main class="container" id="top">
-      <!-- HERO = gauche infos + droite slider -->
+      <!-- HERO -->
       <section class="hero">
         <div class="hero-grid">
           <!-- Left info -->
           <div class="info-panel">
-            <div class="info-badge">Cross • Running • Trail</div>
-            <h1 class="info-title">Rejoins le club</h1>
+            <div class="info-badge">Bienvenue au PUC ATHLE-RUNNING & TRAIL</div>
+            <h1 class="info-title">
+              Courir ensemble, progresser, se faire plaisir
+            </h1>
             <p class="info-text">
-              Entraînements encadrés, esprit collectif, et sorties en pleine
-              nature. Contacte-nous pour une séance d’essai.
+              Passionné de course à pied ? Que tu sois débutant, amateur ou
+              coureur confirmé, le <b>PUC ATHLE-RUNNING & TRAIL</b> t’ouvre ses
+              portes pour partager ensemble le plaisir de courir.
             </p>
 
-            <div class="box">
-              <h3>Les entraînements</h3>
+            <div class="box" id="entrainements">
+              <h3>Nos entraînements</h3>
               <div class="schedule">
                 <div class="row">
                   <div class="day">Lundi / Mercredi / Vendredi</div>
@@ -548,20 +560,32 @@
                   <div class="time">10h30 → 12h30</div>
                 </div>
               </div>
-            </div>
-
-            <div class="box">
-              <h3>Contact rapide</h3>
-              <p class="info-text" style="margin: 0">
-                📧 <b>tonmail@example.com</b><br />
-                📱 <b>+33 6 00 00 00 00</b><br />
-                📷 <b>@ton_instagram</b>
+              <p class="info-text" style="margin-top: 12px">
+                Des séances variées et adaptées à tous les niveaux :
+                entraînements collectifs, séances personnalisées le dimanche
+                (groupe ou solo selon objectifs), plans personnalisés tout au
+                long de l’année et préparation aux compétitions.
               </p>
             </div>
 
-            <div class="cta">
-              <a class="btn primary" href="#contact">Contact détaillé</a>
-              <a class="btn" href="#photos">Galerie</a>
+            <div class="cta" id="inscription">
+              <a
+                class="btn primary"
+                target="_blank"
+                rel="noopener"
+                href="https://puc.monclub.app/app/60d430fadcadb40027751a2e?selectedMembership=6953d6e1474df87171d65aa9&step=1&selectedSlots=&waitingSlots=&childSubscription=false"
+              >
+                S’inscrire
+              </a>
+              <a class="btn" href="#contact">Contact</a>
+              <a class="btn" href="#photos">Voir les photos</a>
+            </div>
+
+            <div class="box">
+              <h3>Séance d’essai</h3>
+              <p class="info-text" style="margin: 0">
+                Viens participer à une <b>séance d’essai gratuite</b> !
+              </p>
             </div>
           </div>
 
@@ -582,43 +606,79 @@
         </div>
       </section>
 
-      <!-- Descriptif club -->
+      <!-- CLUB -->
       <section id="club" class="section">
-        <h2>Le club</h2>
+        <h2>Notre mission</h2>
         <p>
-          ATHLE-RUNNING & TRAIL rassemble des passionnés de course à pied :
-          cross, running et trail. Notre objectif : progresser ensemble, dans
-          une bonne ambiance, avec des entraînements réguliers et des sorties en
-          nature.
+          Promouvoir la course à pied sous toutes ses formes : course sur route,
+          Trail, Cross Country, ou simple jogging. Chez nous, la performance
+          compte autant que la convivialité et la bonne humeur.
         </p>
+
+        <div class="split">
+          <div class="card" id="coaches">
+            <h3>Les entraîneurs</h3>
+            <ul class="list">
+              <li>
+                <b>Arthémon</b> : Entraîneur 3ème degré, ancien vice champion du
+                monde et directeur sportif du PUC.
+              </li>
+              <li>
+                <b>Naima</b> : Entraîneure Niveau 3 course sur route & Trail.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Pourquoi rejoindre le club ?</h3>
+            <ul class="list">
+              <li>Une ambiance chaleureuse et motivante</li>
+              <li>Des conseils personnalisés pour progresser</li>
+              <li>Un esprit d’équipe et de partage</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <!-- Galerie -->
+      <!-- PHOTOS -->
       <section id="photos" class="section">
         <h2>Photos</h2>
         <p>Clique sur une photo pour l’ouvrir en grand.</p>
         <div class="gallery" id="gallery"></div>
       </section>
 
-      <!-- Contact détaillé -->
+      <!-- CONTACT -->
       <section id="contact" class="section">
         <h2>Contact</h2>
         <p>Contacte-nous pour une séance d’essai ou des informations.</p>
 
         <div class="contact-grid">
           <div class="card">
-            <h3>Téléphone</h3>
-            <p><a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
-          </div>
-
-          <div class="card">
             <h3>Email</h3>
-            <p><a href="mailto:tonmail@example.com">tonmail@example.com</a></p>
+            <p>
+              <a href="mailto:athletisme@puc.paris">athletisme@puc.paris</a>
+            </p>
           </div>
 
           <div class="card">
-            <h3>Instagram</h3>
-            <p><a href="#" rel="noopener">@ton_instagram</a></p>
+            <h3>Téléphone</h3>
+            <p>
+              <a href="tel:+33768837893">07 68 83 78 93</a><br />
+              <a href="tel:+33665519211">06 65 51 92 11</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Inscription</h3>
+            <p>
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://puc.monclub.app/app/60d430fadcadb40027751a2e?selectedMembership=6953d6e1474df87171d65aa9&step=1&selectedSlots=&waitingSlots=&childSubscription=false"
+              >
+                Cliquez pour ouvrir le lien d’inscription !
+              </a>
+            </p>
           </div>
         </div>
 
@@ -638,7 +698,7 @@
         </div>
 
         <footer class="footer">
-          © <span id="year"></span> — ATHLE-RUNNING & TRAIL. Tous droits
+          © <span id="year"></span> — PUC ATHLE-RUNNING & TRAIL. Tous droits
           réservés.
         </footer>
       </section>
@@ -655,10 +715,8 @@
     </div>
 
     <script>
-      // Année
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Légendes (optionnel)
       const captions = [
         "Cross — instant d’effort",
         "Relance au soleil",
@@ -672,7 +730,7 @@
         "Chemin forestier",
       ];
 
-      // Galerie (assets/1.jpg -> 10.jpg)
+      // Galerie assets/1.jpg -> 10.jpg
       const gallery = document.getElementById("gallery");
       for (let i = 1; i <= 10; i++) {
         const fig = document.createElement("figure");
@@ -681,11 +739,11 @@
 
         const img = document.createElement("img");
         img.src = `assets/${i}.jpg`;
-        img.alt = `Photo ATHLE-RUNNING & TRAIL ${i}`;
+        img.alt = `Photo PUC ${i}`;
 
         const cap = document.createElement("figcaption");
         cap.className = "gcap";
-        cap.textContent = captions[i - 1] || "ATHLE-RUNNING & TRAIL";
+        cap.textContent = captions[i - 1] || "PUC ATHLE-RUNNING & TRAIL";
 
         fig.appendChild(img);
         fig.appendChild(cap);
@@ -728,7 +786,7 @@
           closeLb();
       });
 
-      // Slider : défilement auto
+      // Slider auto
       const slideA = document.getElementById("slideA");
       const slideB = document.getElementById("slideB");
       const sliderImages = Array.from(
