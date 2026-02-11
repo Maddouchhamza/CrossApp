@@ -6,166 +6,82 @@
     <title>PUC ATHLE-RUNNING & TRAIL</title>
     <meta
       name="description"
-      content="PUC ATHLE-RUNNING & TRAIL — entraînements, entraîneurs, inscription, contact."
+      content="PUC ATHLE RUNNING & TRAIL — entraînements, entraîneurs, contact, adresse."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- NAVBAR -->
+    <!-- NAVBAR (centrée, sans boutons) -->
     <header class="nav" id="top">
-      <div class="container nav-inner">
-        <a class="brand" href="#top" aria-label="Accueil">
+      <div class="container nav-inner nav-center">
+        <a class="brand brand-center" href="#top" aria-label="Accueil">
           <img class="logo-img" src="assets/Logo.svg" alt="Logo PUC" />
-          <span class="brand-name">Bienvenue au PUC ATHLE-RUNNING & TRAIL</span>
+          <span class="brand-name">PUC ATHLE-RUNNING & TRAIL</span>
         </a>
-
-        <nav class="links" aria-label="Navigation">
-          <a href="#contact">Contact</a>
-          <a
-            class="btn primary"
-            target="_blank"
-            rel="noopener"
-            href="https://puc.monclub.app/app/60d430fadcadb40027751a2e?selectedMembership=6953d6e1474df87171d65aa9&step=1&selectedSlots=&waitingSlots=&childSubscription=false"
-          >
-            S’inscrire
-          </a>
-        </nav>
       </div>
     </header>
 
-    <main class="container page">
-      <section class="dashboard" aria-label="Présentation du club">
-        <!-- 1/4 haut gauche : présentation (light) -->
-        <div class="card quarter intro">
-          <div class="badge">Cross • Running • Trail</div>
-          <h1 class="title">Courir ensemble</h1>
-          <p class="text">
-            Débutant, amateur ou confirmé : viens t’entraîner avec un groupe
-            motivant.
-          </p>
+    <main class="container page" id="content">
+      <section class="card content-card">
+        <h1 class="content-title">
+          Pourquoi rejoindre le groupe PUC ATHLE RUNNING & TRAIL ?
+        </h1>
 
-          <div class="cta">
-            <a class="btn" href="#contact">Nous contacter</a>
-            <a
-              class="btn primary"
-              target="_blank"
-              rel="noopener"
-              href="https://puc.monclub.app/app/60d430fadcadb40027751a2e?selectedMembership=6953d6e1474df87171d65aa9&step=1&selectedSlots=&waitingSlots=&childSubscription=false"
-            >
-              Inscription
-            </a>
-          </div>
+        <p class="content-text">
+          Amateur ou confirmé, bénéficie d’un accompagnement structuré,
+          personnalisé et fondé sur une solide connaissance et expérience du
+          terrain.
+        </p>
 
-          <div class="mini">
-            <div class="mini-row">
-              <span class="mini-k">Lun / Mer / Ven</span>
-              <span class="mini-v">19h → 21h</span>
-            </div>
-            <div class="mini-row">
-              <span class="mini-k">Dimanche</span>
-              <span class="mini-v">10h30 → 12h30</span>
-            </div>
-          </div>
+        <h2 class="content-h2">Les Entraîneurs :</h2>
+        <ul class="content-list">
+          <li>Entraîneur(e) 3ème degré course sur route et trail.</li>
+          <li>
+            <b>Arthémon</b> : Entraineur 3ème degré, ancien vice-champion du
+            monde et directeur technique du PUC.
+          </li>
+        </ul>
+
+        <h2 class="content-h2">Nos jours d’entrainement :</h2>
+        <ul class="content-list">
+          <li><b>Lundi</b> : 19h à 21h</li>
+          <li><b>Mercredi</b> : 19h à 21h</li>
+          <li><b>Vendredi</b> : 19h à 21h</li>
+          <li>
+            <b>Dimanche</b> : Sorties longues sur terrains vallonnés en solo ou
+            en groupe selon les objectifs et les envies de chacun.
+          </li>
+        </ul>
+
+        <h2 class="content-h2">Nous contacter :</h2>
+        <p class="content-text">
+          <b>Tel</b> :
+          <a href="tel:+33665519211">06 65 51 92 11</a>
+          ou
+          <a href="tel:+33768837893">07 68 83 78 93</a>
+          <br />
+          <b>Courriel</b> :
+          <a href="mailto:athletisme@puc.paris">athletisme@puc.paris</a>
+        </p>
+
+        <h2 class="content-h2">Et l’adresse pour venir faire un test avec nous :</h2>
+        <div class="address-simple">
+          <div class="addr-title">Stade Charléty</div>
+          <div class="addr-line">17 Av. Pierre de Coubertin, 75013 Paris</div>
+          <a
+            class="addr-map"
+            target="_blank"
+            rel="noopener"
+            href="https://www.google.com/maps/search/?api=1&query=Stade+Charl%C3%A9ty+17+Av.+Pierre+de+Coubertin+75013+Paris"
+          >
+            Ouvrir sur Google Maps
+          </a>
         </div>
 
-        <!-- 1/4 haut droite : slider -->
-        <div class="card quarter slider" aria-label="Galerie du club">
-          <img
-            id="slideA"
-            class="active"
-            src="assets/1.jpg"
-            alt="Photo club 1"
-          />
-          <img id="slideB" src="assets/2.jpg" alt="Photo club 2" />
-          <div class="slider-caption">
-            <div class="cap-left">Galerie du club</div>
-          </div>
-        </div>
-
-        <!-- 1/4 bas gauche : entraîneurs -->
-        <div class="card quarter">
-          <h2 class="h2">Entraîneurs</h2>
-          <ul class="list">
-            <li>
-              <b>Naima</b> — Entraîneur 3ème degré, Niveau 3 route & trail.
-            </li>
-            <li>
-              <b>Arthémon</b> — Entraîneur 3ème degré, directeur sportif du PUC.
-            </li>
-          </ul>
-
-          <div class="note">
-            Plans personnalisés + préparation compétitions.
-          </div>
-        </div>
-
-        <!-- 1/4 bas droite : pourquoi -->
-        <div class="card quarter">
-          <h2 class="h2">Pourquoi nous rejoindre ?</h2>
-          <ul class="list">
-            <li>Ambiance chaleureuse</li>
-            <li>Conseils pour progresser</li>
-            <li>Esprit d’équipe</li>
-            <li>Séance d’essai gratuite</li>
-          </ul>
-        </div>
-
-        <!-- Bandeau bas : contact + adresse (joli, 1 seul bloc) -->
-        <div class="card contact-wide" id="contact">
-          <div class="contact-left">
-            <div class="contact-title">Contact</div>
-            <div class="contact-sub">
-              Réponse rapide — séance d’essai / infos / inscription
-            </div>
-          </div>
-
-          <div class="contact-items">
-            <div class="pill">
-              <div class="pill-ico">📧</div>
-              <div class="pill-txt">
-                <div class="pill-lbl">Email</div>
-                <a href="mailto:athletisme@puc.paris"
-                  ><b>athletisme@puc.paris</b></a
-                >
-              </div>
-            </div>
-
-            <div class="pill">
-              <div class="pill-ico">📱</div>
-              <div class="pill-txt">
-                <div class="pill-lbl">Téléphone</div>
-                <a href="tel:+33768837893"><b>07 68 83 78 93</b></a>
-                <div class="pill-small">
-                  <a href="tel:+33665519211">06 65 51 92 11</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="pill">
-              <div class="pill-ico">📍</div>
-              <div class="pill-txt">
-                <div class="pill-lbl">Adresse</div>
-                <b>Stade Charléty</b>
-                <div class="pill-small">
-                  17 Av. Pierre de Coubertin, 75013 Paris
-                </div>
-                <a
-                  class="map"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://www.google.com/maps/search/?api=1&query=Stade+Charl%C3%A9ty+17+Avenue+Pierre+de+Coubertin+75013+Paris"
-                >
-                  Ouvrir sur Maps
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer">
-            © <span id="year"></span> — PUC ATHLE-RUNNING & TRAIL
-          </div>
-        </div>
+        <footer class="footer">
+          © <span id="year"></span> — PUC ATHLE-RUNNING & TRAIL
+        </footer>
       </section>
     </main>
 
