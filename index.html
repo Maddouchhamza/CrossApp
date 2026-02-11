@@ -6,7 +6,7 @@
     <title>PUC ATHLE-RUNNING & TRAIL</title>
     <meta
       name="description"
-      content="PUC ATHLE RUNNING & TRAIL — entraînements, entraîneurs, contact, adresse."
+      content="PUC ATHLE RUNNING & TRAIL — entraînements, entraîneurs, contact, adresse, galerie."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -16,7 +16,7 @@
     <header class="nav" id="top">
       <div class="container nav-inner nav-center">
         <a class="brand brand-center" href="#top" aria-label="Accueil">
-          <img class="logo-img" src="assets/Logo.svg" alt="Logo PUC" />
+          <img class="logo-img" src="assets/logo.svg" alt="Logo PUC" />
           <span class="brand-name">PUC ATHLE-RUNNING & TRAIL</span>
         </a>
       </div>
@@ -57,12 +57,14 @@
         <h2 class="content-h2">Nous contacter :</h2>
         <p class="content-text">
           <b>Tel</b> :
-          <a href="tel:+33665519211">06 65 51 92 11</a>
+          <a class="plain-link" href="tel:+33665519211">06 65 51 92 11</a>
           ou
-          <a href="tel:+33768837893">07 68 83 78 93</a>
+          <a class="plain-link" href="tel:+33768837893">07 68 83 78 93</a>
           <br />
           <b>Courriel</b> :
-          <a href="mailto:athletisme@puc.paris">athletisme@puc.paris</a>
+          <a class="plain-link" href="mailto:athletisme@puc.paris"
+            >athletisme@puc.paris</a
+          >
         </p>
 
         <h2 class="content-h2">Et l’adresse pour venir faire un test avec nous :</h2>
@@ -77,6 +79,32 @@
           >
             Ouvrir sur Google Maps
           </a>
+        </div>
+
+        <!-- GALERIE (slider) -->
+        <div class="gallery-wrap" aria-label="Galerie photos du club">
+          <div class="gallery-head">
+            <div class="gallery-title">Galerie du club</div>
+            <div class="gallery-hint">Photos en défilement</div>
+          </div>
+
+          <div class="slider" aria-label="Slider photos">
+            <img id="slideA" class="active" src="assets/1.jpg" alt="Photo club 1" />
+            <img id="slideB" src="assets/2.jpg" alt="Photo club 2" />
+          </div>
+
+          <div class="gallery-dots" aria-hidden="true">
+            <span class="dot active" id="dot1"></span>
+            <span class="dot" id="dot2"></span>
+            <span class="dot" id="dot3"></span>
+            <span class="dot" id="dot4"></span>
+            <span class="dot" id="dot5"></span>
+            <span class="dot" id="dot6"></span>
+            <span class="dot" id="dot7"></span>
+            <span class="dot" id="dot8"></span>
+            <span class="dot" id="dot9"></span>
+            <span class="dot" id="dot10"></span>
+          </div>
         </div>
 
         <footer class="footer">
