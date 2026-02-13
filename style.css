@@ -57,7 +57,7 @@ a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 .brand {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 12px;
   min-width: 0;
   text-decoration: none;
@@ -73,7 +73,7 @@ a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .brand-name {
   font-weight: 600;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
